@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dollar Comparator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Dollar Comparator</h1>
+      <p class="subtitle">
+        See what money feels like at a different scale. Comparisons are based on
+        yearly EBITDA (companies) or estimated annual earnings (individuals)
+        versus the median U.S. household income.
+      </p>
+    </header>
+
+    <section class="card">
+      <div class="field">
+        <label for="entity">Compare against</label>
+        <select id="entity"></select>
+        <p class="hint" id="entity-info"></p>
+      </div>
+
+      <div class="field">
+        <label for="direction">Direction</label>
+        <select id="direction">
+          <option value="toPerson">They spend it &rarr; what it feels like to an average person</option>
+          <option value="toEntity">An average person spends it &rarr; what it feels like to them</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="amount">Amount (USD)</label>
+        <div class="amount-wrap">
+          <span class="currency">$</span>
+          <input type="number" id="amount" value="1" min="0" step="any" />
+        </div>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <p class="result-label" id="result-label"></p>
+        <p class="result-value" id="result-value"></p>
+        <p class="result-note" id="result-note"></p>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Figures are approximate, based on recent public filings and published
+        estimates, and are for illustration only. Baseline: median U.S.
+        household income of <span id="baseline"></span>/year.
+      </p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
